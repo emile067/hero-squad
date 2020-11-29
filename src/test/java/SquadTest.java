@@ -61,5 +61,20 @@ public class SquadTest {
         assertTrue(newSquad.getSquadHeroes().isEmpty());
     }
 
+    @Test
+    public void clearSquads_true(){
+        Squad firstSquad = new Squad(3,"marines","coding");
+        Squad secondSquad = new Squad(4,"Marines","Coding");
+        assertFalse(Squad.getSquadsList().isEmpty());
+        Squad.clearSquads();
+        assertTrue(Squad.getSquadsList().isEmpty());
+    }
 
+    @Test
+    public void findSquadByName(){
+        Squad firstSquad = new Squad(3,"marines","coding");
+        Squad secondSquad = new Squad(4,"Marine","Coding");
+        assertEquals(firstSquad,Squad.find("marines"));
+        assertEquals(secondSquad,Squad.find("Marine"));
+    }
 }

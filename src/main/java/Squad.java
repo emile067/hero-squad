@@ -50,7 +50,19 @@ public class Squad {
     public void clearHeroes(){
         this.squadHeroes.clear();
     }
+
     public static void clearSquads(){
         squadsList.clear();
+    }
+
+    public static Squad find(String name) {
+        Integer index = null;
+        for (Squad squad : squadsList) {
+            if (squad.squadName == name) {
+                index = squadsList.indexOf(squad);
+                break;
+            }
+        }
+        return squadsList.get(index);
     }
 }
