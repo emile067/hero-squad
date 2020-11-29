@@ -10,6 +10,26 @@ public class Hero {
         this.heroesList.add(this);
     }
 
+    public String getHeroName() {
+        return heroName;
+    }
+
+    public String getHeroAge() {
+        return heroAge;
+    }
+
+    public String getHeroPower() {
+        return heroPower;
+    }
+
+    public String getHeroWeakness() {
+        return heroWeakness;
+    }
+
+    public static List<Hero> getHeroesList() {
+        return heroesList;
+    }
+
     private String heroName;
     private String heroAge;
     private String heroPower;
