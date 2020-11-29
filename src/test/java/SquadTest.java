@@ -49,4 +49,17 @@ public class SquadTest {
         newSquad.addHero(secondHero);
         assertEquals(initialSize+1,newSquad.getSquadSize());
     }
+
+    @Test
+    public void ClearHeroes_true(){
+        Squad newSquad = new Squad(4,"Marines", "Coding to another level");
+        Hero firstHero = new Hero("emile","18", "Coding", "Sleeping:)");
+        Hero secondHero = new Hero("kamana","18", "Strength", "Patience");
+        newSquad.addHero(firstHero);
+        newSquad.addHero(secondHero);
+        newSquad.clearHeroes();
+        assertTrue(newSquad.getSquadHeroes().isEmpty());
+    }
+
+
 }

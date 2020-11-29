@@ -46,4 +46,11 @@ public class Squad {
         this.squadHeroes.add(newHero);
         this.squadSize= this.squadSize+1;
     }
+
+    public void clearHeroes(){
+        this.squadHeroes.clear();
+    }
+    public static void clearSquads(){
+        squadsList.clear();
+    }
 }
