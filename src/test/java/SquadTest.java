@@ -27,4 +27,16 @@ public class SquadTest {
         assertTrue(Squad.getSquadsList().contains(firstSquad));
         assertTrue(Squad.getSquadsList().contains(secondSquad));
     }
+
+    @Test
+    public void addHeroesToSquadWithAddHero(){
+        Squad newSquad = new Squad(4,"Marines", "Coding to another level");
+        Hero firstHero = new Hero("emile","18", "Coding", "Sleeping:)");
+        Hero secondHero = new Hero("kamana","18", "Strength", "Patience");
+        newSquad.addHero(firstHero);
+        newSquad.addHero(secondHero);
+        assertTrue(newSquad.getSquadHeroes().contains(firstHero));
+        assertTrue(newSquad.getSquadHeroes().contains(secondHero));
+    }
+
 }

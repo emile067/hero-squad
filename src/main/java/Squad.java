@@ -6,6 +6,7 @@ public class Squad {
         this.maxSize = maxSize;
         this.squadName = squadName;
         this.squadCause = squadCause;
+        this.squadSize = 0;
         this.squadsList.add(this);
     }
 
@@ -21,8 +22,8 @@ public class Squad {
         return squadCause;
     }
 
-    public static List<Hero> getSquadHeroes() {
-        return squadHeroes;
+    public List<Hero> getSquadHeroes() {
+        return this.squadHeroes;
     }
 
     public static List<Squad> getSquadsList() {
@@ -30,8 +31,14 @@ public class Squad {
     }
 
     private int maxSize;
+    private int squadSize;
     private String squadName;
     private String squadCause;
-    private static List<Hero> squadHeroes = new ArrayList<Hero>();
+    private List<Hero> squadHeroes = new ArrayList<Hero>();
     private static List<Squad> squadsList = new ArrayList<Squad>();
+
+    public void addHero(Hero newHero){
+        this.squadHeroes.add(newHero);
+        this.squadSize=+1;
+    }
 }
