@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="HeroTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-29T16:41:34" hostname="emile-HP-ProBook-640-G1" time="0.001">
+  <properties/>
+  <testcase name="newHeroIsCreated_true" classname="HeroTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
