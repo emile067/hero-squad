@@ -31,6 +31,11 @@ public class Squad {
     }
 
     private int maxSize;
+
+    public int getSquadSize() {
+        return squadSize;
+    }
+
     private int squadSize;
     private String squadName;
     private String squadCause;
@@ -39,6 +44,6 @@ public class Squad {
 
     public void addHero(Hero newHero){
         this.squadHeroes.add(newHero);
-        this.squadSize=+1;
+        this.squadSize= this.squadSize+1;
     }
 }

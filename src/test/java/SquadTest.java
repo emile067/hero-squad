@@ -39,4 +39,14 @@ public class SquadTest {
         assertTrue(newSquad.getSquadHeroes().contains(secondHero));
     }
 
+    @Test
+    public void addHeroIncrementsSize(){
+        Squad newSquad = new Squad(4,"Marines", "Coding to another level");
+        Hero firstHero = new Hero("emile","18", "Coding", "Sleeping:)");
+        Hero secondHero = new Hero("kamana","18", "Strength", "Patience");
+        newSquad.addHero(firstHero);
+        int initialSize = newSquad.getSquadSize();
+        newSquad.addHero(secondHero);
+        assertEquals(initialSize+1,newSquad.getSquadSize());
+    }
 }
