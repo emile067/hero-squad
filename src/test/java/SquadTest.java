@@ -19,4 +19,12 @@ public class SquadTest {
         assertEquals("Coding to another level",newSquad.getSquadCause());
         assertTrue(newSquad.getSquadHeroes().contains(newHero));
     }
+
+    @Test
+    public void returnAllSquads(){
+        Squad firstSquad = new Squad(3,"marines","coding");
+        Squad secondSquad = new Squad(4,"Marines","Coding");
+        assertTrue(Squad.getSquadsList().contains(firstSquad));
+        assertTrue(Squad.getSquadsList().contains(secondSquad));
+    }
 }
