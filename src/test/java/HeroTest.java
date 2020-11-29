@@ -19,5 +19,11 @@ public class HeroTest {
         assertEquals("Sleeping:)",newHero.getHeroWeakness());
     }
 
-
+    @Test
+    public void returnAllHeroesWithGetHeroes_true(){
+        Hero firstHero = new Hero("emile","18", "Coding", "Sleeping:)");
+        Hero secondHero = new Hero("kamana","18", "Strength", "Patience");
+        assertTrue(Hero.getHeroesList().contains(firstHero));
+        assertTrue(Hero.getHeroesList().contains(secondHero));
+    }
 }
