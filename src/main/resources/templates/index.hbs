@@ -1,0 +1,22 @@
+{{#partial "title"}}index{{/partial}}
+
+{{#partial "content"}}
+    <h1>My heroes:</h1>
+
+    {{#if heroes}}
+        {{#each heroes}}
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="images/Sniper_B-512.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{heroName}}</h5>
+                    <p class="card-text">Power: {{heroPower}}<br>Weakness: {{heroWeakness}}</p>
+                    <a href="#" class="btn btn-primary">Edit hero</a>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No heroes yet!</p>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}
