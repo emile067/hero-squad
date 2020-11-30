@@ -12,7 +12,7 @@ public class SquadTest {
     @Test
     public void newSquadHasAllAttributes(){
         Squad newSquad = new Squad(4,"Marines", "Coding to another level");
-        Hero newHero = new Hero("emile","18", "Coding", "Sleeping:)");
+        Hero newHero = new Hero("emile","18", "Coding", "Sleeping:)","marines");
         newSquad.getSquadHeroes().add(newHero);
         assertEquals(4,newSquad.getMaxSize());
         assertEquals("Marines",newSquad.getSquadName());
@@ -31,8 +31,8 @@ public class SquadTest {
     @Test
     public void addHeroesToSquadWithAddHero(){
         Squad newSquad = new Squad(4,"Marines", "Coding to another level");
-        Hero firstHero = new Hero("emile","18", "Coding", "Sleeping:)");
-        Hero secondHero = new Hero("kamana","18", "Strength", "Patience");
+        Hero firstHero = new Hero("emile","18", "Coding", "Sleeping:)","marines");
+        Hero secondHero = new Hero("kamana","18", "Strength", "Patience","marines");
         newSquad.addHero(firstHero);
         newSquad.addHero(secondHero);
         assertTrue(newSquad.getSquadHeroes().contains(firstHero));
@@ -42,8 +42,8 @@ public class SquadTest {
     @Test
     public void addHeroIncrementsSize(){
         Squad newSquad = new Squad(4,"Marines", "Coding to another level");
-        Hero firstHero = new Hero("emile","18", "Coding", "Sleeping:)");
-        Hero secondHero = new Hero("kamana","18", "Strength", "Patience");
+        Hero firstHero = new Hero("emile","18", "Coding", "Sleeping:)","marines");
+        Hero secondHero = new Hero("kamana","18", "Strength", "Patience","marines");
         newSquad.addHero(firstHero);
         int initialSize = newSquad.getSquadSize();
         newSquad.addHero(secondHero);
@@ -53,8 +53,8 @@ public class SquadTest {
     @Test
     public void ClearHeroes_true(){
         Squad newSquad = new Squad(4,"Marines", "Coding to another level");
-        Hero firstHero = new Hero("emile","18", "Coding", "Sleeping:)");
-        Hero secondHero = new Hero("kamana","18", "Strength", "Patience");
+        Hero firstHero = new Hero("emile","18", "Coding", "Sleeping:)","marines");
+        Hero secondHero = new Hero("kamana","18", "Strength", "Patience","marines");
         newSquad.addHero(firstHero);
         newSquad.addHero(secondHero);
         newSquad.clearHeroes();

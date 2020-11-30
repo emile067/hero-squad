@@ -23,8 +23,8 @@ public class App {
             String age = req.queryParams("heroAge");
             String power = req.queryParams("heroPower");
             String weakness = req.queryParams("heroWeakness");
-            Hero newHero = new Hero(heroName,age,power,weakness);
-//            Squad newSquad = Squad.find();
+            String squad= req.queryParams("heroSquad");
+            Hero newHero = new Hero(heroName,age,power,weakness,squad);
             res.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
