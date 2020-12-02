@@ -13,9 +13,9 @@
         <label for="heroAge">Enter the hero's age</label>
         <input class="form-control" type="text" id="heroAge" name="heroAge">
         {{#if squads}}
-            {{#each}}
+            {{#each squads}}
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="heroSquad" id="heroSquad" value="">
+                    <input class="form-check-input" type="radio" name="heroSquad" id="heroSquad" value="{{id}}">
                     <label class="form-check-label" for="heroSquad">
                         {{squadName}}
                     </label>

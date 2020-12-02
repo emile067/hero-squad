@@ -8,6 +8,7 @@ public class Squad {
         this.squadCause = squadCause;
         this.squadSize = 0;
         this.squadsList.add(this);
+        this.id = squadsList.size();
     }
 
     public int getMaxSize() {
@@ -37,6 +38,12 @@ public class Squad {
     }
 
     private int squadSize;
+
+    public int getId() {
+        return id;
+    }
+
+    private int id;
     private String squadName;
     private String squadCause;
     private List<Hero> squadHeroes = new ArrayList<Hero>();
@@ -59,10 +66,14 @@ public class Squad {
         Integer index = null;
         for (Squad squad : squadsList) {
             if (squad.squadName == name) {
-                index = squadsList.indexOf(squad);
+                index = getSquadsList().indexOf(squad);
                 break;
             }
         }
         return squadsList.get(index);
+    }
+
+    public static Squad findById(int id){
+        return squadsList.get(id-1);
     }
 }

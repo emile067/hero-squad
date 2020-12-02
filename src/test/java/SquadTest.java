@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 public class SquadTest {
     @Test
-    public void newHeroIsCreated_true(){
+    public void newSquadIsCreated_true(){
         Squad newSquad = new Squad(4,"Marines", "Coding to another level");
         assertTrue(newSquad instanceof Squad);
     }
@@ -74,7 +74,18 @@ public class SquadTest {
     public void findSquadByName(){
         Squad firstSquad = new Squad(3,"marines","coding");
         Squad secondSquad = new Squad(4,"Marine","Coding");
-        assertEquals(firstSquad,Squad.find("marines"));
+        Squad foundSquad= Squad.find("marines");
+        assertEquals(firstSquad,foundSquad);
         assertEquals(secondSquad,Squad.find("Marine"));
+    }
+
+    @Test
+    public void findSquadById(){
+        Squad firstSquad = new Squad(3,"marines","coding");
+        Squad secondSquad = new Squad(4,"Marine","Coding");
+        int idToFind= firstSquad.getId();
+        System.out.println(idToFind);
+        Squad foundSquad= Squad.findById(idToFind);
+        assertEquals(firstSquad,foundSquad);
     }
 }

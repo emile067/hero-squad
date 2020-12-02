@@ -1,0 +1,23 @@
+{{#partial "content"}}
+    <div class="container">
+        {{#if squad}}
+        <h1>{{squad.squadName}} heroes:</h1>
+
+        {{#if squad.squadHeroes}}
+            {{#each squad.squadHeroes}}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{heroName}}</h5>
+                        <p class="card-text">Power: {{heroPower}}<br>Weakness: {{heroWeakness}}</p>
+                        <a href="#" class="btn btn-primary">Edit hero</a>
+                    </div>
+                </div>
+            {{/each}}
+        {{else}}
+            <p>No heroes yet!</p>
+        {{/if}}
+    </div>
+            {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}

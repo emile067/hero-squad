@@ -1,6 +1,23 @@
 {{#partial "title"}}index{{/partial}}
 
 {{#partial "content"}}
+    {{#if squads}}
+        <nav id="squad-nav" class="navbar navbar-toggleable-md navbar-light bg-faded navbar-left">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav flex-column">
+                    {{#each squads}}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/squads/{{id}}">{{squadName}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </nav>
+    {{/if}}
+    <div class="container">
     <h1>My heroes:</h1>
 
     {{#if heroes}}
@@ -9,7 +26,7 @@
                 <img class="card-img-top" src="images/Sniper_B-512.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{heroName}}</h5>
-                    <p class="card-text">Power: {{heroPower}}<br>Weakness: {{heroWeakness}}</p>
+                    <p class="card-text">Power: {{heroPower}}<br>Weakness: {{heroWeakness}}<br>Squad: {{heroSquad}}</p>
                     <a href="#" class="btn btn-primary">Edit hero</a>
                 </div>
             </div>
@@ -17,6 +34,7 @@
     {{else}}
         <p>No heroes yet!</p>
     {{/if}}
+    </div>
 {{/partial}}
 
 {{> layout.hbs}}
