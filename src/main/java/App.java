@@ -55,16 +55,11 @@ public class App {
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
 
-        get("/squads/:squadName", (req, res) -> {
+        get("/squads/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int indexToFind = Integer.parseInt(req.params(":squadName"));
+            int indexToFind = Integer.parseInt(req.params("id"));
             Squad foundSquad = Squad.findById(indexToFind);
             model.put("squad",foundSquad);
-//            int size= Integer.parseInt(req.params("squadSize"));
-//            String cause= req.params("squadCause");
-//            Squad newSquad= new Squad(size,nameOfSquadToFind,cause);
-//            List<Hero> heroes = newSquad.getSquadHeroes();
-//            model.put("heroes", heroes);
             return new ModelAndView(model, "squad.hbs");
         }, new HandlebarsTemplateEngine());
     }
