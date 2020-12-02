@@ -1,0 +1,25 @@
+{{#partial "content"}}
+    <div class="container">
+        {{#if squad}}
+        <h1 class="text-warning"><strong>{squad.squadName}}</strong>{</h1>
+                <div class="container">
+                        <h1 class="text-warning"><strong> HEROES:</strong></h1>
+                        {{#if squad.squadHeroes}}
+                            {{#each squad.squadHeroes}}
+                                <div class="card w-75">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-warning"><strong>{{heroName}}</strong></h3>
+                                        <p class="card-text"><strong>{{heroAge}}</strong> years old Power: <strong>{{heroPower}}</strong> Weakness: <strong>{{heroWeakness}}</strong> Squad: <strong>{{heroSquad}}</strong></p>
+                                    </div>
+                                </div>
+                                <hr>
+                            {{/each}}
+                        {{else}}
+                            <p>No heroes yet!</p>
+                        {{/if}}
+                </div>
+    </div>
+            {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}

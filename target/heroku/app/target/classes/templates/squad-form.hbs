@@ -1,0 +1,18 @@
+{{#partial "title"}}Add hero{{/partial}}
+
+{{#partial "content"}}
+    <h1>Add a hero:</h1>
+    <div class="container">
+        <form action="/squad" method="post">
+            <label for="squadName">Enter the squad's name</label>
+            <input class="form-control" type="text" id="squadName" name="squadName">
+            <label for="squadCause">Enter the squad's Cause</label>
+            <input class="form-control" type="text" id="squadCause" name="squadCause">
+            <label for="squadSize">Enter the squad's max size</label>
+            <input class="form-control" type="text" id="squadSize" name="squadSize">
+            <button type="submit" class="btn btn-default">Go!</button>
+        </form>
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}
