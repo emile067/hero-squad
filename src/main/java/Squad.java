@@ -7,6 +7,7 @@ public class Squad {
         this.squadName = squadName;
         this.squadCause = squadCause;
         this.squadSize = 0;
+        this.sizeCheck = this.squadSize<this.maxSize;
         this.squadsList.add(this);
         this.id = squadsList.size();
     }
@@ -43,15 +44,21 @@ public class Squad {
         return id;
     }
 
+    public boolean isSizeCheck() {
+        return sizeCheck;
+    }
+
     private int id;
     private String squadName;
     private String squadCause;
+    private boolean sizeCheck;
     private List<Hero> squadHeroes = new ArrayList<Hero>();
     private static List<Squad> squadsList = new ArrayList<Squad>();
 
     public void addHero(Hero newHero){
         this.squadHeroes.add(newHero);
         this.squadSize= this.squadSize+1;
+        this.sizeCheck = this.squadSize<this.maxSize;
     }
 
     public void clearHeroes(){

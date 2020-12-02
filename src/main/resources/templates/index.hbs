@@ -1,39 +1,44 @@
 {{#partial "title"}}index{{/partial}}
 
 {{#partial "content"}}
-    {{#if squads}}
-        <nav id="squad-nav" class="navbar navbar-toggleable-md navbar-light bg-faded navbar-left">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav1">
-                <ul class="navbar-nav flex-column">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="container ">
+                <h1 class="text-warning"><strong>SQUADS:</strong></h1>
+                {{#if squads}}
                     {{#each squads}}
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/squads/{{id}}">{{squadName}}</a>
-                        </li>
+                        <div class="card w-75">
+                            <div class="card-body">
+                                <h3 class="card-title text-warning"><strong class="text-warning">{{squadName}}</strong></h3>
+                                <p class="card-text"><strong class="text-warning">{{squadSize}}</strong>members ,Cause: <strong class="text-warning">{{squadCause}}</strong> ,<strong class="text-warning">{{maxSize}}</strong>members max</p>
+                                <a href="/squads/{{id}}" class="btn btn-outline-success">view squad</a>
+                            </div>
+                            <hr>
+                        </div>
                     {{/each}}
-                </ul>
+                {{else}}
+                    <p>No heroes yet!</p>
+                {{/if}}
             </div>
-        </nav>
-    {{/if}}
-    <div class="container">
-    <h1>My heroes:</h1>
-
-    {{#if heroes}}
-        {{#each heroes}}
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="images/Sniper_B-512.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{heroName}}</h5>
-                    <p class="card-text">Power: {{heroPower}}<br>Weakness: {{heroWeakness}}<br>Squad: {{heroSquad}}</p>
-                    <a href="#" class="btn btn-primary">Edit hero</a>
-                </div>
+        </div>
+        <div class="col-md-5">
+            <div class="container">
+                <h1 class="text-warning"><strong> HEROES:</strong></h1>
+                {{#if heroes}}
+                    {{#each heroes}}
+                        <div class="card w-75">
+                            <div class="card-body">
+                                <h3 class="card-title text-warning"><strong>{{heroName}}</strong></h3>
+                                <p class="card-text"><strong>{{heroAge}}</strong> years old Power: <strong>{{heroPower}}</strong> Weakness: <strong>{{heroWeakness}}</strong> Squad: <strong>{{heroSquad}}</strong></p>
+                            </div>
+                        </div>
+                        <hr>
+                    {{/each}}
+                {{else}}
+                    <p>No heroes yet!</p>
+                {{/if}}
             </div>
-        {{/each}}
-    {{else}}
-        <p>No heroes yet!</p>
-    {{/if}}
+        </div>
     </div>
 {{/partial}}
 
